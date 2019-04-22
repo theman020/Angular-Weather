@@ -1,0 +1,54 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<html>
+  <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  </head>
+  
+  <body >
+    <h1 style="color: dimgray">Weather Forecast</h1>
+    <div style="padding-top: 50px;"class="container">
+        <input type="text" [(ngModel)]='city' onfocus="this.value=''">
+        <button (click)="getData()">Search Weather</button>
+        <hr>
+        <br>
+        <div *ngIf="(currentWeather | json) != ({} | json)">
+            <!-- {{currentWeather | json}}  prinst json -->
+            <div class='cityname'>
+                {{currentWeather.name}} ,{{currentWeather.sys.country}}
+            </div>
+            <div class="date">
+              {{currentWeather.dateToAppend|date:'mediumDate'}} {{currentWeather.weather[0].main}}
+            </div>
+            <div class="current">
+              <div class="visual">
+                <div class = "icon">
+                  <img  src="http://openweathermap.org/img/w/{{currentWeather.weather[0].icon}}.png" alt="Weather icon">
+                </div>
+                <div class="temp">
+                   {{currentWeather.main.temp}}
+                </div>
+                <div class="centi">
+                    °F
+                </div>
+              </div>
+              <div class="description">
+                <div class="humid">
+                   Humidity:{{currentWeather.main.humidity}} 
+                </div>
+                <div class="wind">
+                    Wind:{{currentWeather.wind.speed}}
+                </div>
+              </div>
+            </div>           
+        </div>
+        <div *ngIf="weatherList">
+            <app-child *ngFor="let data of weatherList" [childData]="data"></app-child>
+        </div>
+          <router-outlet></router-outlet>
+    </div>
+      
+      
+  </body>
+
+</html>

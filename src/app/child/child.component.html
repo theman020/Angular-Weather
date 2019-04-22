@@ -1,0 +1,19 @@
+<html>
+  <head>
+  </head>
+  <body>
+      <div class="seven-day" *ngIf="childData">
+          <div class="seven-day-fc">
+            <div class="date">{{childData.dt_txt|date:'mediumDate'}}</div>
+            <div class="icon thunder">
+              <img  src="http://openweathermap.org/img/w/{{childData.weather[0].icon}}.png" alt="Weather icon">
+            </div>
+            <div class="seven-day-temp">
+              <div class="temp-high">{{childData.main.temp_max}}°</div>
+              <div class="temp-low">{{childData.main.temp_min}}°</div>
+            </div>
+            <div class="desc">{{childData.weather[0].description}}</div>
+          </div>
+      </div>
+  </body>
+</html>

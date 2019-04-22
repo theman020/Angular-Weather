@@ -1,0 +1,42 @@
+.cityname {
+    font-size: 3em;
+    color: #444;
+}
+.current {
+    overflow: auto;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.current .visual {
+    width: 50%;
+    float: left;
+}
+.current .description {
+    width: 50%;
+    float: left;
+}
+.visual .icon {
+    width: 64px;
+    height: 64px;
+}
+.icon {
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: contain;
+}
+
+
+.temp {
+    font-size: 1.5em;
+    display: inline-block;
+    vertical-align: top;
+}
+.centi {
+    vertical-align: top;
+    display: inline-block;
+    margin-top: 6px;
+    color: #888;
+}
